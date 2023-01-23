@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+{% extends 'layouts/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<h1>Welcome to my Django + PostgreSQL WebApp</h1>
+
+<p>This app uses django in the backend and postgresql as the database.
+    It will allow you to create new projects, assign tasks to it, set tasks as done or delete them.</p>
+<p>In this project you´ll be able to see project structure, models and databases, parameters,
+    templates, template inheritance, jinja loops and conditionals, forms,
+    url naming, render and redirect, and the use of widgets and static files.</p>
+<p>Feel free to try it out!</p>
+
+<img src="{% static 'django.png' %}" width="200">
+
+<p>Created by Rj Norena</p>
+
+{% endblock %}
+
+
+</body>
+</html>

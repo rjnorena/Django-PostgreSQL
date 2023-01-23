@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Task</title>
+</head>
+<body>
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+<h1>Delete Task</h1>
+<form method="POST">
+    {% csrf_token %}
+    <h2>{% if task.done == True %} ✅ {% else %} ⏳ {% endif%}{{ task.title }}</h2>
+    <h3>{{ task.description }}</h3>
+    <p>Belongs to project: {{ task.project.id }}</p>
+    <h1>Are you sure you want to delete this task?</h1>
+  <button>
+    Delete
+  </button>
+</form>
+{% endblock %}
+
+</body>
+</html>

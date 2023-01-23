@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tasks</title>
+</head>
+<body>
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+<h1>Tasks</h1>
+{% for task in tasks %}
+
+<h2>{% if task.done == True %} ✅ {% else %} ⏳ {% endif%}{{ task.title }}</h2>
+<h3>{{ task.description }}</h3>
+<p>Belongs to project: {{ task.project.id }}</p>
+<form method="POST">
+ {% csrf_token %}
+
+<input type="button" name='DELETE' onclick="location.href='{% url "delete_task" task.id %}'"
+value="Delete Task"></input>
+</form>
+{% endfor %}
+
+{% endblock%}
+</body>
+</html>

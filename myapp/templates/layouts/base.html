@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Base</title>
+    <link rel="stylesheet" href=" {% static '/style/main.css' %}">
+</head>
+<body>
+<nav class="nav container">
+    <ul>
+        <li>
+            <a href="/">Home</a>
+        </li>
+        <li>
+            <a href="/about">About</a>
+        </li>
+        <li>
+            <a href="/projects">Projects</a>
+        </li>
+        <li>
+            <a href="/tasks">Tasks</a>
+        </li>
+        <li>
+            <a href="/create_task">Create New Task</a>
+        </li>
+        <li>
+            <a href="/create_project">Create New Project</a>
+        </li>
+    </ul>
+</nav>
+<main class="container">
+    {% block content %}
+    {% endblock %}
+</main>
+
+
+</body>
+</html>

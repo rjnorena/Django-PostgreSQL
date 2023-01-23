@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Projects</title>
+</head>
+<body>
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+<h1>Projects</h1>
+<p>Click on each project to see tasks assigned to it.</p>
+{% for project in projects %}
+<a href="{% url 'project_detail' project.id %}">
+    <h1>{{ project.name }},   ID:{{ project.id }}</h1>
+</a>
+{% endfor %}
+
+{% endblock %}
+
+</body>
+</html>
